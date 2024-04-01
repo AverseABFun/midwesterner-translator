@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midwesterner Translator</title>
+</head>
+<body>
+    <textarea name="translator" id="translator" cols="30" rows="10"></textarea>
+    <script>
+        const translator = document.getElementById('translator');
+        translator.addEventListener('input', () => {
+            const text = translator.value;
+            const translatedText = text
+                .replaceAll(/oh no/gi, "ope")
+                .replaceAll("f"+String.fromCharCode(117, 99, 107), "crap")
+                .replaceAll(/don't you know/gi, "dontcha know")
+                .replaceAll(/you guys/gi, "y'all")
+                .replaceAll(/you all/gi, "y'all")
+                .replaceAll(/you/gi, "ya")
+                .replaceAll(/don't know/gi, "dunno")
+                .replaceAll(/south/gi, "cowboy land")
+                .replaceAll(/texas/gi, "ultra cowboy land")
+                .replaceAll(/did ya/gi, "didja")
+                .replaceAll(/hello/gi, "howdy")
+                .replaceAll(/hi/gi, "howdy")
+                .replaceAll(/hey/gi, "howdy");
+            translator.value = translatedText;
+        });
+    </script>
+</body>
+</html>
